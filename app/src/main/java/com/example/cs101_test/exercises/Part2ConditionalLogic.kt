@@ -5,13 +5,22 @@ object Part2ConditionalLogic {
     // Create a function that takes an integer as a parameter and returns "Positive", "Negative", or "Zero".
     fun checkNumber(number: Int): String {
         // Your code here
-        return ""
+        if (number > 0) {
+            return "Positive"
+        } else if (number < 0) {
+            return "Negative"
+        } else {
+            return "Zero"
+        }
     }
 
     // ---------------------- EXERCISE 2
     // Create a function that takes a string and prints each character on a new line.
     fun printChars(input: String) {
-        // Your code here
+        // Your code here'
+        for (char in input){
+            println(char)
+        }
     }
 
     // ---------------------- EXERCISE 3
@@ -19,7 +28,12 @@ object Part2ConditionalLogic {
     // For example if input is 45 then output should be 9 (4+5)
     fun sumDigits(number: Int): Int {
         // Your code here
-        return 0
+        var sum = 0
+
+        for (nr in number.toString()){
+            sum += nr.digitToInt()
+        }
+        return sum //fået hjælp af chat her
     }
 
     // ---------------------- EXERCISE 4
@@ -27,14 +41,14 @@ object Part2ConditionalLogic {
     // For example if input is (1,2,3,4,5) then output should be (1,3,5)
     fun filterOddNumbers(numbers: List<Int>): List<Int> {
         // Your code here
-        return listOf()
+        return numbers.filter { it % 2 != 0 }
     }
 
     // ---------------------- EXERCISE 5
     // Create a function that takes a list of strings and returns a new list with all strings in lowercase.
     fun transformToLowercase(strings: List<String>): List<String> {
         // Your code here
-        return listOf()
+        return strings.map { it.lowercase() }
     }
 
     // ---------------------- EXERCISE 6
@@ -42,6 +56,11 @@ object Part2ConditionalLogic {
     // Expected output: "1", "2", "4", "5", "7", "8", "10"
     fun printNumbersSkipMultiplesOf3() {
         // Your code here
+        for (i in 1..10) {
+            if (1 % 3 != 0) {
+                println(i)
+            }
+        }
     }
 
     // ---------------------- EXERCISE 7
@@ -56,9 +75,9 @@ object Part2ConditionalLogic {
     // ---------------------- EXERCISE 8
     // Modify the function to have default values for both width and height and to return the area of the rectangle.
     // Example of a function with a default value "world": fun greet(name: String = "world") {}
-    fun calculateArea(width: Int, height: Int): Int {
+    fun calculateArea(width: Int = 1, height: Int = 1): Int {
         // Your code here
-        return 0
+        return width * height
     }
 
     // ---------------------- EXERCISE 9
